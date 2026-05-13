@@ -1,0 +1,98 @@
+{
+  "$id": "EGUPiCVO73M9worPwR3PfThAtC0AJnH5ZgwsXf6TzbVK",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EventPass",
+  "description": "Event Pass Schema",
+  "type": "object",
+  "credentialType": "EventPassCred",
+  "version": "1.0.0",
+  "properties": {
+    "v": {
+      "description": "Credential Version String",
+      "type": "string"
+    },
+    "d": {
+      "description": "Credential SAID",
+      "type": "string"
+    },
+    "u": {
+      "description": "One time use nonce",
+      "type": "string"
+    },
+    "i": {
+      "description": "Issuer AID",
+      "type": "string"
+    },
+    "ri": {
+      "description": "Registry SAID",
+      "type": "string"
+    },
+    "s": {
+      "description": "Schema SAID",
+      "type": "string"
+    },
+    "a": {
+      "oneOf": [
+        {
+          "description": "Attributes block SAID",
+          "type": "string"
+        },
+        {
+          "$id": "ELppbffpWEM-uufl6qpVTcN6LoZS2A69UN4Ddrtr_JqE",
+          "description": "Attributes block",
+          "type": "object",
+          "properties": {
+            "d": {
+              "description": "Attributes data SAID",
+              "type": "string"
+            },
+            "i": {
+              "description": "Issuee AID",
+              "type": "string"
+            },
+            "dt": {
+              "description": "Issuance date time",
+              "type": "string",
+              "format": "date-time"
+            },
+            "eventName": {
+              "description": "The event name",
+              "type": "string"
+            },
+            "accessLevel": {
+              "description": "staff/speaker/attendee",
+              "type": "string",
+              "enum": [
+                "staff",
+                "speaker",
+                "attendee"
+              ]
+            },
+            "validDate": {
+              "description": "Valid date yyyy-mm-dd",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "d",
+            "i",
+            "dt",
+            "eventName",
+            "accessLevel",
+            "validDate"
+          ]
+        }
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "d",
+    "i",
+    "ri",
+    "s",
+    "a"
+  ]
+}

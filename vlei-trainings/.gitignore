@@ -1,0 +1,15 @@
+__pycache__/
+jupyter/notebooks/logs/delegate_incept.log
+jupyter/notebooks/logs/multisig_event.log
+jupyter/notebooks/logs/multisig_join.log
+jupyter/notebooks/config/multisig/multisig_inception_config.json
+.idea
+jupyter/notebooks/config/credential_data/access_cred_edge.json
+jupyter/notebooks/config/credential_data/course_cred_data.json
+jupyter/notebooks/config/credential_data/skill_cred_data.json
+jupyter/notebooks/config/credential_data/skill_cred_edge.json
+jupyter/notebooks/config/credential_data/skill_cred_rule.json
+jupyter/notebooks/config/multisig/multisig_config.json
+/.vs
+/.ipynb_checkpoints
+/markdown/.ipynb_checkpoints

@@ -1,0 +1,179 @@
+{
+  "$id": "",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EmployeeSkillCredential",
+  "description": "Credential signifying a validated employee skill, supported by external evidence.",
+  "type": "object",
+  "credentialType": "EmployeeSkillCredential",
+  "version": "1.0.0",
+  "properties": {
+    "v": {
+      "description": "Credential Version String",
+      "type": "string"
+    },
+    "d": {
+      "description": "Credential SAID",
+      "type": "string"
+    },
+    "u": {
+      "description": "One time use nonce",
+      "type": "string"
+    },
+    "i": {
+      "description": "Issuer AID (Company's AID)",
+      "type": "string"
+    },
+    "ri": {
+      "description": "Registry SAID",
+      "type": "string"
+    },
+    "s": {
+      "description": "Schema SAID",
+      "type": "string"
+    },
+    "a": {
+      "oneOf": [
+        {
+          "description": "Attributes block SAID",
+          "type": "string"
+        },
+        {
+          "$id": "EGHIJkLmNoPqRsTuVKLMNOp3994uK25a3j7y2gV6n8O",
+          "description": "Attributes block",
+          "type": "object",
+          "properties": {
+            "d": {
+              "description": "Attributes data SAID",
+              "type": "string"
+            },
+            "i": {
+              "description": "Issuee AID (Employee's AID)",
+              "type": "string"
+            },
+            "dt": {
+              "description": "Issuance date time",
+              "type": "string",
+              "format": "date-time"
+            },
+            "skillName": {
+              "description": "The name of the certified skill.",
+              "type": "string"
+            },
+            "skillLevel": {
+              "description": "The proficiency level of the skill.",
+              "type": "string"
+            },
+            "assessmentDate": {
+                "description": "The date the skill was assessed.",
+                "type": "string",
+                "format": "date"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "d",
+            "i",
+            "dt",
+            "skillName",
+            "skillLevel",
+            "assessmentDate"
+          ]
+        }
+      ]
+    },
+    "e": {
+      "oneOf": [
+        {
+          "description": "Edges block SAID",
+          "type": "string"
+        },
+        {
+          "$id": "",
+          "description": "Edges block",
+          "type": "object",
+          "properties": {
+            "d": {
+              "description": "Edges block SAID",
+              "type": "string"
+            },
+            "supporting_evidence": {
+              "description": "Link to the Course Completion Credential that serves as supporting evidence.",
+              "type": "object",
+              "properties": {
+                "n": {
+                  "description": "SAID of the supporting Course Completion credential.",
+                  "type": "string"
+                },
+                "s": {
+                  "description": "SAID of the required schema for the supporting credential.",
+                  "type": "string",
+                  "const": "EF4BJfBb0xQhQke9yfoaepX6owHV9a5m2r-HjTLy59hS"
+                },
+                "o": {
+                  "description": "Operator indicating the issuer of this credential is NOT required to be the issuee of the linked credential.",
+                  "type": "string",
+                  "const": "NI2I"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "n",
+                "s",  
+                "o"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "d",
+            "supporting_evidence"
+          ]
+        }
+      ]
+    },
+    "r": {
+      "oneOf": [
+        {
+          "description": "Rules block SAID",
+          "type": "string"
+        },
+        {
+          "$id": "",
+          "description": "Rules governing the verification of this skill credential.",
+          "type": "object",
+          "properties": {
+            "d": {
+              "description": "Rules block SAID",
+              "type": "string"
+            },
+            "verification_policy": {
+              "description": "Verification Policy",
+              "type": "object",
+              "properties": {
+                "l": {
+                  "description": "Associated legal language or policy text.",
+                  "type": "string",
+                  "const": "Verification of this skill certification requires checking the validity of supporting evidence."
+                }
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "d",
+            "verification_policy"
+          ]
+        }
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "d",
+    "i",
+    "ri",
+    "s",
+    "a"
+  ]
+}

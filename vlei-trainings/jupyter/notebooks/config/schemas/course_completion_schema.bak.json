@@ -1,0 +1,94 @@
+{
+  "$id": "",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CourseCompletionCredential",
+  "description": "Credential signifying the successful completion of a training course.",
+  "type": "object",
+  "credentialType": "CourseCompletionCredential",
+  "version": "1.0.0",
+  "properties": {
+    "v": {
+      "description": "Credential Version String",
+      "type": "string"
+    },
+    "d": {
+      "description": "Credential SAID",
+      "type": "string"
+    },
+    "u": {
+      "description": "One time use nonce",
+      "type": "string"
+    },
+    "i": {
+      "description": "Issuer AID (Training Provider's AID)",
+      "type": "string"
+    },
+    "ri": {
+      "description": "Registry SAID",
+      "type": "string"
+    },
+    "s": {
+      "description": "Schema SAID",
+      "type": "string"
+    },
+    "a": {
+      "oneOf": [
+        {
+          "description": "Attributes block SAID",
+          "type": "string"
+        },
+        {
+          "$id": "",
+          "description": "Attributes block",
+          "type": "object",
+          "properties": {
+            "d": {
+              "description": "Attributes data SAID",
+              "type": "string"
+            },
+            "i": {
+              "description": "Issuee AID (Employee's AID)",
+              "type": "string"
+            },
+            "dt": {
+              "description": "Issuance date time",
+              "type": "string",
+              "format": "date-time"
+            },
+            "courseName": {
+              "description": "The name of the completed course.",
+              "type": "string"
+            },
+            "courseLevel": {
+                "description": "The level of the course.",
+                "type": "string"
+            },
+            "completionDate": {
+              "description": "The date the course was completed.",
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "d",
+            "i",
+            "dt",
+            "courseName",
+            "courseLevel",
+            "completionDate"
+          ]
+        }
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "d",
+    "i",
+    "ri",
+    "s",
+    "a"
+  ]
+}

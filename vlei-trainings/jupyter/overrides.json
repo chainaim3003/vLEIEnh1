@@ -1,0 +1,45 @@
+{
+  "@jupyterlab/notebook-extension:tracker": {
+    "enableKernelInitNotification": true,
+    "codeCellConfig": {
+      "autoClosingBrackets": true,
+      "codeFolding": true,
+      "highlightActiveLine": true,
+      "lineWrap": false
+    },
+    "defaultCell": "code",
+    "autoStartDefaultKernel": false,
+    "showInputPlaceholder": true,
+    "inputHistoryScope": "global",
+    "kernelShutdown": false,
+    "markdownCellConfig": {
+      "autoClosingBrackets": true,
+      "codeFolding": true,
+      "highlightActiveLine": true
+    },
+    "autoRenderMarkdownCells": false,
+    "rawCellConfig": {
+      "autoClosingBrackets": true,
+      "codeFolding": true,
+      "highlightActiveLine": true
+    },
+    "scrollPastEnd": false,
+    "recordTiming": false,
+    "overscanCount": 3,
+    "maxNumberOutputs": 50,
+    "scrollHeadingToTop": true,
+    "showEditorForReadOnlyMarkdown": false,
+    "kernelStatus": {
+      "showOnStatusBar": false,
+      "showProgress": true
+    },
+    "documentWideUndoRedo": false,
+    "showHiddenCellsButton": true,
+    "renderingLayout": "default",
+    "sideBySideLeftMarginOverride": "10px",
+    "sideBySideRightMarginOverride": "10px",
+    "sideBySideOutputRatio": 1,
+    "windowingMode": "full",
+    "accessKernelHistory": false
+  }
+}
